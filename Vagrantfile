@@ -13,8 +13,9 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "sbeliakou/centos-7.4-x86_64-minimal"
-
-  (1..2).each do |i|
+  
+  #(1..2).each do |i| 
+  (3..4).each do |i|
     config.vm.define "zabbix#{i}" do |zbx|
       zbx.vm.provision "shell", path: "script#{i}.sh"
       zbx.vm.hostname = "zabbix#{i}"
